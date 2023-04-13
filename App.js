@@ -1,12 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+
+import home from './src/pages/home';
+import sobre from '.src/pages/sobre';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.titulo}>Coisa Linda!</Text>
-      <Text>Sono muito, sono.</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home}/>
+        <Stack.Screen name="Sobre" component={Sobre}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
